@@ -15,7 +15,7 @@ const TextAnalysis = () => {
 
         try {
             const result = await ApiService.analyzeText(text);
-            setAnalysisResult(result.data.analysis_result);
+            setAnalysisResult(result?.data);
         } catch (err) {
             setError(err.message || 'Text analysis failed');
         } finally {
